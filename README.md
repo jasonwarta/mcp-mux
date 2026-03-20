@@ -42,11 +42,11 @@ The shim aggregates tools from all backend servers into a single namespace, rout
 ## Install
 
 ```bash
-# Global install
-npm install -g mcp-mux
+# Install from GitHub
+npm install -g github:jasonwarta/mcp-mux
 
-# Or use npx (no install)
-npx mcp-mux
+# Or use npx directly from GitHub (no install)
+npx github:jasonwarta/mcp-mux
 ```
 
 ## Setup
@@ -84,7 +84,21 @@ In your `.mcp.json`:
     "mcp-mux": {
       "type": "stdio",
       "command": "npx",
-      "args": ["mcp-mux"]
+      "args": ["github:jasonwarta/mcp-mux"]
+    }
+  }
+}
+```
+
+Or if you cloned the repo locally:
+
+```json
+{
+  "mcpServers": {
+    "mcp-mux": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["/path/to/mcp-mux/src/shim.mjs"]
     }
   }
 }
@@ -138,14 +152,16 @@ The shim doubles as a CLI for broker management:
 
 ```bash
 # Check broker status (server states, connected shims, uptime)
-npx mcp-mux status
+npx github:jasonwarta/mcp-mux status
 
 # Stop the broker
-npx mcp-mux stop
+npx github:jasonwarta/mcp-mux stop
 
 # Restart the broker
-npx mcp-mux restart
+npx github:jasonwarta/mcp-mux restart
 ```
+
+If installed globally or cloned locally, replace `npx github:jasonwarta/mcp-mux` with `mcp-mux` or `node src/shim.mjs`.
 
 All commands accept `--config <path>` to specify an alternate config file.
 
