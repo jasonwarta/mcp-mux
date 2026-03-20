@@ -1,0 +1,20 @@
+{
+  "servers": {
+    "pare-git": {
+      "command": "npx",
+      "args": ["-y", "@paretools/git"]
+    },
+    "pare-test": {
+      "command": "npx",
+      "args": ["-y", "@paretools/test"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"],
+      "mode": "per-session",
+      "lazy": true
+    }
+  },
+  "idleTimeoutMs": 300000,
+  "requestTimeoutMs": 60000
+}

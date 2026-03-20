@@ -1,0 +1,35 @@
+{
+  "name": "mcp-mux",
+  "version": "0.1.0",
+  "description": "MCP multiplexer — share backend MCP servers across Claude Code sessions via a background broker",
+  "type": "module",
+  "bin": {
+    "mcp-mux": "src/shim.mjs"
+  },
+  "exports": {
+    ".": "./src/shim.mjs",
+    "./broker": "./src/broker.mjs",
+    "./config": "./src/config.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "src/"
+  ],
+  "keywords": [
+    "mcp",
+    "multiplexer",
+    "claude",
+    "claude-code",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonwarta/mcp-mux.git"
+  }
+}
