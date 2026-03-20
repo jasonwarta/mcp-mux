@@ -8,11 +8,39 @@
       "command": "npx",
       "args": ["-y", "@paretools/test"]
     },
+    "pare-npm": {
+      "command": "npx",
+      "args": ["-y", "@paretools/npm"]
+    },
+    "pare-lint": {
+      "command": "npx",
+      "args": ["-y", "@paretools/lint"]
+    },
+    "pare-build": {
+      "command": "npx",
+      "args": ["-y", "@paretools/build"]
+    },
+    "chakra-ui": {
+      "command": "npx",
+      "args": ["-y", "@chakra-ui/react-mcp"]
+    },
+    "tanstack": {
+      "command": "npx",
+      "args": ["-y", "@tanstack/cli", "mcp"]
+    },
     "playwright": {
       "command": "npx",
       "args": ["@playwright/mcp@latest"],
       "mode": "per-session",
       "lazy": true
+    },
+    "custom-server": {
+      "command": "node",
+      "args": ["./my-mcp-server.js"],
+      "env": { "LOG_LEVEL": "info" },
+      "cwd": "/path/to/server",
+      "maxRestarts": 3,
+      "restartBackoffMs": 2000
     }
   },
   "idleTimeoutMs": 300000,
